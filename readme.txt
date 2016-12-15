@@ -13,6 +13,11 @@ git commit -am hello
 heroku create flask10
 git push heroku master
 curl https://flask10.herokuapp.com/
+
+At that point a gunicorn webserver should be running on heroku.
+
+I should see evidence of this from the shell command below:
+
 heroku logs
 
 To run this app on my laptop, I run this shell command:
