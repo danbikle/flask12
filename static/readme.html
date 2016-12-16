@@ -59,15 +59,15 @@ heroku status
 </pre>
 
 <p>I thought of an ORIGINAL name from my new heroku app.
-</p><p>I picked: myflask10
+</p><p>I picked: myflask11
 </p><p>You should pick a different name.
 </p>
 
 <pre>
 cd ~
-git clone https://github.com/danbikle/flask10 myflask10
-cd            myflask10
-heroku create myflask10
+git clone https://github.com/danbikle/flask11 myflask11
+cd            myflask11
+heroku create myflask11
 git push heroku master
 heroku ps:scale web=1
 </pre>
@@ -77,7 +77,7 @@ heroku ps:scale web=1
 </p>
 
 <pre>
-curl https://myflask10.herokuapp.com/static/home.html
+curl https://myflask11.herokuapp.com/static/home.html
 heroku logs
 </pre>
 
@@ -85,7 +85,7 @@ heroku logs
 </p>
 
 <pre>
-python flask10.py
+python flask11.py
 </pre>
 
 <p>Which allows me to see the app at the URL listed below:
