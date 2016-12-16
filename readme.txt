@@ -1,10 +1,10 @@
 readme.txt
 
-This repo is a very simple flask app.
+This repo is a very simple Flask app.
 
 I use it to show tasks listed below:
   - how to deploy flask to heroku
-  - how to create a static website with flask
+  - how to create a static website with Flask
 
 I followed these steps to deploy it:
 
