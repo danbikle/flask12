@@ -4,6 +4,21 @@
       readme
     </title>
   </head>
+  
+  <style>
+  pre {
+      font-size: 1.5rem;
+      line-height: 1.5;
+      color: #330000;
+      font-weight: bold;
+      border-radius: 15px;
+      padding-left:  11px;
+      background-color: #DDDDDD;
+  }
+  body {font-family: sans-serif;}
+  p    {font-size: 1.5rem;line-height: 1.5;}
+  </style>
+  
   <body>
     <a href='/static/home.html'   >home</a>
     <a href='/static/about.html'  >about</a>
@@ -12,12 +27,16 @@
     <a href='/static/readme.html' >readme</a>
     <h1>readme</h1>
     <h2>How to deploy this site to Ubuntu and Heroku.com</h2>
+    
+<p>
+I created an account on the heroku.com website and memorized my password there.
+</p>
+
+<p>
+Then I ran some shell commands:
+</p>
 
 <pre>
-I created an account on the heroku.com website and memorized my password there.
-
-Then I ran some shell commands:
-
 cd ~
 rm -f Anaconda3-4.2.0-Linux-x86_64.sh
 wget https://repo.continuum.io/archive/Anaconda3-4.2.0-Linux-x86_64.sh
@@ -26,7 +45,9 @@ mv anaconda3/bin/curl anaconda3/bin/curl_ana
 echo 'export PATH=${HOME}/anaconda3/bin:$PATH' >> ~/.bashrc
 bash
 conda install gunicorn
+</pre>
 
+<pre>
 sudo apt-get install ruby ruby-dev gitk
 cd ~
 rm -rf heroku-client.tgz heroku-client
@@ -35,45 +56,69 @@ tar zxf heroku-client.tgz
 echo 'export PATH=${HOME}/heroku-client/bin:${PATH}' >> ~/.bashrc
 bash
 heroku status
+</pre>
 
-I thought of an ORIGINAL name from my new heroku app.
-I picked: myflask10
-You should pick a different name.
+<p>I thought of an ORIGINAL name from my new heroku app.
+</p><p>I picked: myflask10
+</p><p>You should pick a different name.
+</p>
 
+<pre>
 cd ~
 git clone https://github.com/danbikle/flask10 myflask10
 cd            myflask10
 heroku create myflask10
 git push heroku master
 heroku ps:scale web=1
-
-At that point a gunicorn webserver should be running on heroku.
-
-I should see evidence of this from the shell commands below:
-
-curl https://myflask10.herokuapp.com/static/home.html
-heroku logs
-
-To run this app on my laptop, I run this shell command:
-
-python flask10.py
-
-Which allows me to see the app at the URL listed below:
-
-http://0.0.0.0:5000/static/home.html
-
-Also I can rely on the Gunicorn web server instead of plain Python by using this shell command:
-
-gunicorn wsgi
-
-Which allows me to see the app at the URL listed below:
-
-http://0.0.0.0:8000/static/home.html
-
-If you have questions, e-me: bikle101@gmail.com
-
 </pre>
 
+<p>At that point a gunicorn webserver was running in my heroku deployment.
+</p><p>I saw evidence of this from the shell commands below:
+</p>
+
+<pre>
+curl https://myflask10.herokuapp.com/static/home.html
+heroku logs
+</pre>
+
+<p>To run this app on my laptop, I ran this shell command:
+</p>
+
+<pre>
+python flask10.py
+</pre>
+
+<p>Which allows me to see the app at the URL listed below:
+</p>
+
+<a href='http://0.0.0.0:5000/static/home.html' target='x'>
+http://0.0.0.0:5000/static/home.html
+</a>
+
+
+<p>Also I can rely on the Gunicorn web server instead of plain Python by using this shell command:
+</p>
+
+<pre>
+gunicorn wsgi
+</pre>
+
+<p>Which allows me to see the app at the URL listed below:
+</p>
+
+<a href='http://0.0.0.0:8000/static/home.html' target='x'>
+http://0.0.0.0:8000/static/home.html
+</a>
+
+<p>If you have questions, e-me: bikle101@gmail.com
+</p>
+
+    <hr />
+    <a href='/static/home.html'   >home</a>
+    <a href='/static/about.html'  >about</a>
+    <a href='/static/blog.html'   >blog</a>
+    <a href='/static/contact.html'>contact</a>
+    <a href='/static/readme.html' >readme</a>
     <hr />
     <p>© py4.us 1999-3000</p>
   </body>
