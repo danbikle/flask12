@@ -19,7 +19,7 @@ echo 'export PATH=${HOME}/anaconda3/bin:$PATH' >> ~/.bashrc
 bash
 conda install gunicorn
 
-sudo apt-get install ruby ruby-dev
+sudo apt-get install ruby ruby-dev gitk
 cd ~
 rm -rf heroku-client.tgz heroku-client
 wget https://s3.amazonaws.com/assets.heroku.com/heroku-client/heroku-client.tgz
