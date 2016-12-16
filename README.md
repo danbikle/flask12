@@ -72,4 +72,30 @@ Which allows me to see the app at the URL listed below:
 
 http://0.0.0.0:8000
 
+# Enhancements
+
+This repo offers enhancements over
+
+https://github.com/danbikle/flask10
+
+You should see the enhancements in this file:
+
+https://github.com/danbikle/flask11/blob/master/flask11.py
+
+First, I added a route for the path I call '/'.
+
+This allows me to visit this URL:
+
+https://flask11.herokuapp.com
+
+The route will then serve this file:
+
+https://github.com/danbikle/flask11/blob/master/static/home.html
+
+Also I enhanced the site so it will serve a favicon.
+
+I did this by placing a favicon.ico file in the static folder.
+
+Next, I added a route so that if a browser asks for /favicon.ico, the server will find the the file in the static folder and then serve it.
+
 If you have questions, e-me: bikle101@gmail.com
