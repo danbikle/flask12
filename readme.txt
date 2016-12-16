@@ -12,6 +12,7 @@ git add .
 git commit -am hello
 heroku create flask10
 git push heroku master
+heroku ps:scale web=1
 curl https://flask10.herokuapp.com/
 
 At that point a gunicorn webserver should be running on heroku.
