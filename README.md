@@ -48,7 +48,7 @@ At that point a gunicorn webserver was running in my heroku deployment.
 I saw evidence of this from the shell commands below:
 
 ```bash
-curl https://myflask11.herokuapp.com/static/home.html
+curl https://myflask11.herokuapp.com
 heroku logs
 ```
 
@@ -60,7 +60,7 @@ python flask11.py
 
 Which allows me to see the app at the URL listed below:
 
-http://0.0.0.0:5000/static/home.html
+http://0.0.0.0:5000
 
 Also I can rely on the Gunicorn web server instead of plain Python by using this shell command:
 
@@ -70,6 +70,6 @@ gunicorn wsgi
 
 Which allows me to see the app at the URL listed below:
 
-http://0.0.0.0:8000/static/home.html
+http://0.0.0.0:8000
 
 If you have questions, e-me: bikle101@gmail.com
