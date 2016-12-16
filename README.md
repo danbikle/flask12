@@ -30,15 +30,15 @@ heroku status
 
 I thought of an ORIGINAL name from my new heroku app.
 
-I picked: myflask11
+I picked: myflask12
 
 You should pick a different name.
 
 ```bash
 cd ~
-git clone https://github.com/danbikle/flask11 myflask11
-cd            myflask11
-heroku create myflask11
+git clone https://github.com/danbikle/flask12 myflask12
+cd            myflask12
+heroku create myflask12
 git push heroku master
 heroku ps:scale web=1
 ```
@@ -48,14 +48,14 @@ At that point a gunicorn webserver was running in my heroku deployment.
 I saw evidence of this from the shell commands below:
 
 ```bash
-curl https://myflask11.herokuapp.com
+curl https://myflask12.herokuapp.com
 heroku logs
 ```
 
 To run this app on my laptop, I ran this shell command:
 
 ```bash
-python flask11.py
+python flask12.py
 ```
 
 Which allows me to see the app at the URL listed below:
@@ -80,17 +80,17 @@ https://github.com/danbikle/flask10
 
 You should see the enhancements in this file:
 
-https://github.com/danbikle/flask11/blob/master/flask11.py
+https://github.com/danbikle/flask12/blob/master/flask12.py
 
 First, I added a route for the path I call '/'.
 
 This allows me to visit this URL:
 
-https://flask11.herokuapp.com
+https://flask12.herokuapp.com
 
 The route will then serve this file:
 
-https://github.com/danbikle/flask11/blob/master/static/home.html
+https://github.com/danbikle/flask12/blob/master/static/home.html
 
 Also I enhanced the site so it will serve a favicon.
 
