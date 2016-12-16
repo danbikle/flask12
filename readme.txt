@@ -6,9 +6,11 @@ I use it to show tasks listed below:
   - how to deploy flask to heroku
   - how to create a static website with Flask
 
-I followed these steps to deploy it on Ubuntu 16:
+I followed steps listed below to deploy it on Ubuntu 16 and heroku.com.
 
 I created an account on the heroku.com website and memorized my password there.
+
+Then I ran some shell commands:
 
 cd ~
 rm -f Anaconda3-4.2.0-Linux-x86_64.sh
@@ -28,8 +30,13 @@ echo 'export PATH=${HOME}/heroku-client/bin:${PATH}' >> ~/.bashrc
 bash
 heroku status
 
+I thought of an ORIGINAL name from my new heroku app.
+I picked: myflask10
+You should pick a different name.
+
 cd ~
 git clone https://github.com/danbikle/flask10 myflask10
+cd            myflask10
 heroku create myflask10
 git push heroku master
 heroku ps:scale web=1
