@@ -9,6 +9,15 @@ I use it to show tasks listed below:
 I followed these steps to deploy it:
 
 cd ~
+rm -f Anaconda3-4.2.0-Linux-x86_64.sh
+wget https://repo.continuum.io/archive/Anaconda3-4.2.0-Linux-x86_64.sh
+bash Anaconda3-4.2.0-Linux-x86_64.sh
+mv anaconda3/bin/curl anaconda3/bin/curl_ana
+echo 'export PATH=${HOME}/anaconda3/bin:$PATH' >> ~/.bashrc
+bash
+conda install gunicorn
+
+cd ~
 git clone https://github.com/danbikle/flask10 myflask10
 heroku create myflask10
 git push heroku master
@@ -29,7 +38,7 @@ Which allows me to see the app at the URL listed below:
 
 http://0.0.0.0:5000/static/home.html
 
-Also I can rely on the Gunicorn web server instead of plain Python using this shell command:
+Also I can rely on the Gunicorn web server instead of plain Python by using this shell command:
 
 gunicorn wsgi
 
