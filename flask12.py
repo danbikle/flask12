@@ -58,6 +58,15 @@ def template14(tkr='FB'):
     div_qhi_s = str(soup.find(id="quote-header-info"))
     return render_template('template14.html', mystr=div_qhi_s)
 
+from flask import request
+@application.route("/template16/")
+def template16():
+    tkr       = request.args.get('tkr', 'FB')
+    myrsp     = requests.get('https://finance.yahoo.com/quote/'+tkr)
+    soup      = bs4.BeautifulSoup(myrsp.text, "lxml")
+    div_qhi_s = str(soup.find(id="quote-header-info"))
+    return render_template('template16.html', mystr=div_qhi_s)
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     application.run(host='0.0.0.0', port=port)
