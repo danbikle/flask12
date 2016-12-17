@@ -5,16 +5,22 @@
     </title>
   </head>
   <body>
-    <a href='/static/home.html'   >home</a>
-    <a href='/static/about.html'  >about</a>
-    <a href='/static/blog.html'   >blog</a>
-    <a href='/static/contact.html'>contact</a>
-    <a href='/static/readme.html' >readme</a>
-    <a href='/template10/'        >template10</a>
-    <a href='/template11/ibm'     >template11/ibm</a>
+    {% include 'links_top.html' %}
     <h1>template10</h1>
-    <h2>A Site Built With Flask</h2>
-    <p>I should use a template if I want Python to help me generate some HTML.</p>
+    <h2>A Template Built With Flask</h2>
+    <p>This page may look like static HTML.</p>
+    <p>Actually, this page gets its HTML from a Flask Template.</p>
+    <p>I should use a template if I want to reuse and share HTML among pages.</p>
+    <p>The links above reside in a template called 'links_top.html'.</p>
+    <p>That template is combined with the template10.html template before templat10 is served to you.</p>
+    <p>I learned about including templates within templates at the link below:</p>
+    <p>
+<a href='http://jinja.pocoo.org/docs/dev/templates/#include' target='x'>
+http://jinja.pocoo.org/docs/dev/templates/#include
+</a>
+    </p>
+
+    <p>Also, I should use a template if I want Python to help me generate some HTML.</p>
     <hr />
     <p>© py4.us 1999-3000</p>
   </body>
