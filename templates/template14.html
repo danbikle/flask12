@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>
-      template13
+      template14
     </title>
   </head>
   <body>
@@ -15,14 +15,12 @@
     <a href='/template12/'        >template12</a>
     <a href='/template13/'        >template13</a>
     <a href='/template14/FB'      >template14/FB</a>
-    <h1>template13</h1>
+    <h1>template14</h1>
     <h2>A Site Built With Flask</h2>
     <p>I should use a template if I want Python to help me generate some HTML.</p>
-    <p>This template should get some HTML from 
-      <a href='https://finance.yahoo.com/quote/IBM' target='x'>
-        https://finance.yahoo.com/quote/IBM
-      </a>
-      and then render it below:</p>
+    <p>This template asks the user for a ticker symbol in the URL field above.</p>
+    <p>Then Python requests info about the ticker from https://finance.yahoo.com</p>
+    <p>Next, Flask renders that info as HTML below:</p>
     <hr />
     {{mystr|safe}}
     <hr />
