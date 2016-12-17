@@ -3,6 +3,7 @@
 # http://flask.pocoo.org/
 
 # Demo1:
+# export FLASK_DEBUG=1
 # export FLASK_APP=flask12.py
 # flask run
 # curl 127.0.0.1:5000/
@@ -59,13 +60,13 @@ def template14(tkr='FB'):
     return render_template('template14.html', mystr=div_qhi_s)
 
 from flask import request
-@application.route("/template16/")
-def template16():
+@application.route("/template15/")
+def template15():
     tkr       = request.args.get('tkr', 'FB')
     myrsp     = requests.get('https://finance.yahoo.com/quote/'+tkr)
     soup      = bs4.BeautifulSoup(myrsp.text, "lxml")
     div_qhi_s = str(soup.find(id="quote-header-info"))
-    return render_template('template16.html', mystr=div_qhi_s)
+    return render_template('template15.html', mystr=div_qhi_s)
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
