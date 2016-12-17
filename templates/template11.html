@@ -5,19 +5,25 @@
     </title>
   </head>
   <body>
-    <a href='/static/home.html'   >home</a>
-    <a href='/static/about.html'  >about</a>
-    <a href='/static/blog.html'   >blog</a>
-    <a href='/static/contact.html'>contact</a>
-    <a href='/static/readme.html' >readme</a>
-    <a href='/template10/'        >template10</a>
-    <a href='/template11/ibm'     >template11/ibm</a>
+    {% include 'links_top.html' %}
     <h1>template11</h1>
-    <h2>A Site Built With Flask</h2>
-    <p>I should use a template if I want Python to help me generate some HTML.</p>
-    <p>This template should do something with a stock ticker.</p>
-    <p>This template should only print the stock ticker.</p>
-    <h2>{{mystr}} The ticker is: {{tkr}}</h2>
+    <h2>A Template Built With Flask, HTML created by Python</h2>    
+    <p>This page is similar to template10.</p>
+    <p>A difference, however, is that YOU can change a small piece of HTML below.</p>
+    <p>You do this by changing the ticker symbol in the URL field above.</p>
+    <p>The default value of the symbol is 'ibm'.</p>
+    <p>Try changing it to 'GOOG' and then press enter.</p>
+    <p>When the Flask server sees your new request, it will wrap 'GOOG' in an HTML h2-element, and then serve it to you:</p>
+    <p>The ticker is:</p> <h2>{{tkr}}</h2>
+    <p>The syntax which controls this page is displayed below:</p>
+    <a href='https://github.com/danbikle/flask12/blob/master/flask12.py' target='x'>
+    https://github.com/danbikle/flask12/blob/master/flask12.py
+    </a>
+    <br />
+    <a href='https://github.com/danbikle/flask12/blob/master/templates/template11.html' target='x'>
+    https://github.com/danbikle/flask12/blob/master/templates/template11.html
+    </a>
+
     <hr />
     <p>© py4.us 1999-3000</p>
   </body>
