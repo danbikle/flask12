@@ -20,7 +20,12 @@
     <h1>template16</h1>
     <h2>A Site Built With Flask</h2>
     <p>I should use a template if I want Python to help me generate some HTML.</p>
-    <p>This template asks the user for a ticker symbol in the URL field above.</p>
+    <p>This template asks the user for a ticker symbol:</p>
+    <form>
+      <input name='tkr'  method='GET' type='text' />
+      <input type="submit" />
+    </form>
+    
     <p>Then Python requests info about the ticker from https://finance.yahoo.com</p>
     <p>Next, Flask renders that info as HTML below:</p>
     <hr />
