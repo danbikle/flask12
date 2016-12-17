@@ -13,7 +13,7 @@
 # Demo3:
 # gunicorn wsgi
 
-# import pdb
+import pdb
 import os
 from   flask import Flask
 from   flask import send_from_directory
@@ -41,6 +41,18 @@ def template11(tkr=None):
 def template12():
     mystr = 'hello'
     return render_template('template12.html', mystr=mystr)
+
+import requests
+import bs4
+@application.route("/template13/")
+def template13():
+    mystr = '<h1>hello</h1>'
+    'https://flask11.herokuapp.com'
+    myrsp     = requests.get('https://finance.yahoo.com/quote/IBM')
+    soup      = bs4.BeautifulSoup(myrsp.text, "lxml")
+    div_qhi_s = str(soup.find(id="quote-header-info"))
+    myh1 = soup.find('h1')    
+    return render_template('template13.html', mystr=div_qhi_s)
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
