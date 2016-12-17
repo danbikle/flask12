@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>
+      template15
+    </title>
+  </head>
+  <body>
+    {% include 'links_top.html' %}
+    <h1>template15</h1>
+    <h2>A Site Built With Flask</h2>
+    <p>I should use a template if I want Python to help me generate some HTML.</p>
+    <p>This template asks the user for a ticker symbol:</p>
+    <form>
+      <input name='tkr'  method='GET' type='text' />
+      <input type="submit" />
+    </form>
+    
+    <p>Then Python requests info about the ticker from https://finance.yahoo.com</p>
+    <p>Next, Flask renders that info as HTML below:</p>
+    <hr />
+    {{mystr|safe}}
+    <hr />
+    <p>© py4.us 1999-3000</p>
+  </body>
+</html>
