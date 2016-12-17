@@ -37,6 +37,11 @@ def template10():
 def template11(tkr=None):
     return render_template('template11.html', tkr=tkr)
 
+@application.route("/template12/")
+def template12():
+    mystr = 'hello'
+    return render_template('template12.html', mystr=mystr)
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     application.run(host='0.0.0.0', port=port)
