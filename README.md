@@ -56,6 +56,8 @@ http://0.0.0.0:8000
 
 I created an account on the heroku.com website and memorized my password there.
 
+Next, I ran shell commands to install heroku-client into my home folder:
+
 ```bash
 sudo apt-get install ruby ruby-dev gitk
 cd ~
