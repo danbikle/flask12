@@ -1,10 +1,17 @@
 # README.md
 
-How to deploy this site to Ubuntu and Heroku.com
+How to deploy this repo to Ubuntu and Heroku.com?
 
-I created an account on the heroku.com website and memorized my password there.
+I deployed this repo to my Ubuntu host with two shell commands:
 
-Then I ran some shell commands:
+```bash
+cd ~
+git clone https://github.com/danbikle/flask12 myflask12
+```
+
+This repo works well with Anaconda.
+
+So I ran some shell commands to install Anaconda3-4.2.0:
 
 ```bash
 cd ~
@@ -16,6 +23,38 @@ echo 'export PATH=${HOME}/anaconda3/bin:$PATH' >> ~/.bashrc
 bash
 conda install gunicorn
 ```
+
+To run this app on my laptop, I ran this shell command:
+
+```bash
+cd ~/myflask12
+python flask12.py
+```
+
+Which allows me to see the app at the URL listed below:
+
+http://0.0.0.0:5000
+
+On my laptop, if I want to run a server which 'auto-reloads' after each file change, I should start the server with these shell commands:
+
+```bash
+cd ~/myflask12
+export FLASK_DEBUG=1
+export FLASK_APP=flask12.py
+flask run
+```
+Also I can rely on the Gunicorn web server instead of plain Python by using this shell command:
+
+```bash
+cd ~/myflask12
+gunicorn wsgi
+```
+
+Which allows me to see the app at the URL listed below:
+
+http://0.0.0.0:8000
+
+I created an account on the heroku.com website and memorized my password there.
 
 ```bash
 sudo apt-get install ruby ruby-dev gitk
@@ -36,7 +75,6 @@ You should pick a different name.
 
 ```bash
 cd ~
-git clone https://github.com/danbikle/flask12 myflask12
 cd            myflask12
 heroku create myflask12
 git push heroku master
@@ -52,50 +90,5 @@ curl https://myflask12.herokuapp.com
 heroku logs
 ```
 
-To run this app on my laptop, I ran this shell command:
-
-```bash
-python flask12.py
-```
-
-Which allows me to see the app at the URL listed below:
-
-http://0.0.0.0:5000
-
-Also I can rely on the Gunicorn web server instead of plain Python by using this shell command:
-
-```bash
-gunicorn wsgi
-```
-
-Which allows me to see the app at the URL listed below:
-
-http://0.0.0.0:8000
-
-# Enhancements
-
-This repo offers enhancements over
-
-https://github.com/danbikle/flask10
-
-You should see the enhancements in this file:
-
-https://github.com/danbikle/flask12/blob/master/flask12.py
-
-First, I added a route for the path I call '/'.
-
-This allows me to visit this URL:
-
-https://flask12.herokuapp.com
-
-The route will then serve this file:
-
-https://github.com/danbikle/flask12/blob/master/static/home.html
-
-Also I enhanced the site so it will serve a favicon.
-
-I did this by placing a favicon.ico file in the static folder.
-
-Next, I added a route so that if a browser asks for /favicon.ico, the server will find the the file in the static folder and then serve it.
 
 If you have questions, e-me: bikle101@gmail.com
