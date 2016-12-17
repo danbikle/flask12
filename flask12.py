@@ -33,6 +33,10 @@ from flask import render_template
 def template10():
     return render_template('template10.html')
 
+@application.route("/template11/<tkr>")
+def template11(tkr=None):
+    return render_template('template11.html', tkr=tkr)
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     application.run(host='0.0.0.0', port=port)
