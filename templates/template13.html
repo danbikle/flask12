@@ -5,16 +5,7 @@
     </title>
   </head>
   <body>
-    <a href='/static/home.html'   >home</a>
-    <a href='/static/about.html'  >about</a>
-    <a href='/static/blog.html'   >blog</a>
-    <a href='/static/contact.html'>contact</a>
-    <a href='/static/readme.html' >readme</a>
-    <a href='/template10/'        >template10</a>
-    <a href='/template11/ibm'     >template11/ibm</a>
-    <a href='/template12/'        >template12</a>
-    <a href='/template13/'        >template13</a>
-    <a href='/template14/FB'      >template14/FB</a>
+    {% include 'links_top.html' %}
     <h1>template13</h1>
     <h2>A Site Built With Flask</h2>
     <p>I should use a template if I want Python to help me generate some HTML.</p>
@@ -25,6 +16,16 @@
       and then render it below:</p>
     <hr />
     {{mystr|safe}}
+
+    <p>The syntax which controls this page is displayed below:</p>
+    <a href='https://github.com/danbikle/flask12/blob/master/flask12.py' target='x'>
+    https://github.com/danbikle/flask12/blob/master/flask12.py
+    </a>
+    <br />
+    <a href='https://github.com/danbikle/flask12/blob/master/templates/template13.html' target='x'>
+    https://github.com/danbikle/flask12/blob/master/templates/template13.html
+    </a>
+    
     <hr />
     <p>© py4.us 1999-3000</p>
   </body>
