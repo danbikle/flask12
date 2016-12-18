@@ -20,20 +20,27 @@
   </style>
   
   <body>
-    <a href='/'   >home</a>
+    <a href='/static/home.html'   >home</a>
     <a href='/static/about.html'  >about</a>
     <a href='/static/blog.html'   >blog</a>
     <a href='/static/contact.html'>contact</a>
     <a href='/static/readme.html' >readme</a>
+    <a href='/template10/'        >template10</a>
     <h1>readme</h1>
-    <h2>How to deploy this site to Ubuntu and Heroku.com</h2>
+    <h2>How to deploy this site to Ubuntu and Heroku.com?</h2>
     
 <p>
-I created an account on the heroku.com website and memorized my password there.
+I deployed this repo to my Ubuntu host with two shell commands:
 </p>
 
+<pre>
+cd ~
+git clone https://github.com/danbikle/flask12 myflask12
+</pre>
+
 <p>
-Then I ran some shell commands:
+This repo works well with Anaconda.
+So I ran some shell commands to install Anaconda3-4.2.0:
 </p>
 
 <pre>
@@ -46,6 +53,60 @@ echo 'export PATH=${HOME}/anaconda3/bin:$PATH' >> ~/.bashrc
 bash
 conda install gunicorn
 </pre>
+
+<p>
+To run this app on my laptop, I ran these shell commands:
+</p>
+
+<pre>
+cd ~/myflask12
+python flask12.py
+</pre>
+
+<p>
+Which allows me to see the app at the URL listed below:
+</p>
+
+<a href='http://0.0.0.0:5000' target='x'>
+http://0.0.0.0:5000
+</a>
+
+
+<p>
+On my laptop, if I want to run a server which 'auto-reloads' after each file change, I should start the server with these shell commands:
+</p>
+
+<pre>
+cd ~/myflask12
+export FLASK_DEBUG=1
+export FLASK_APP=flask12.py
+flask run
+</pre>
+
+<p>
+Also I can rely on the Gunicorn web server instead of plain Python by using this shell command:
+</p>
+
+<pre>
+cd ~/myflask12
+gunicorn wsgi
+</pre>
+
+<p>
+Which allows me to see the app at the URL listed below:
+</p>
+
+<a href='http://0.0.0.0:8000' target='x'>
+http://0.0.0.0:8000
+</a>
+
+<p>
+I created an account on the heroku.com website and memorized my password there.
+</p>
+
+<p>
+Next, I ran shell commands to install heroku-client into my home folder:
+</p>
 
 <pre>
 sudo apt-get install ruby ruby-dev gitk
@@ -65,7 +126,6 @@ heroku status
 
 <pre>
 cd ~
-git clone https://github.com/danbikle/flask12 myflask12
 cd            myflask12
 heroku create myflask12
 git push heroku master
@@ -81,84 +141,16 @@ curl https://myflask12.herokuapp.com/
 heroku logs
 </pre>
 
-<p>To run this app on my laptop, I ran this shell command:
-</p>
-
-<pre>
-python flask12.py
-</pre>
-
-<p>Which allows me to see the app at the URL listed below:
-</p>
-
-<a href='http://0.0.0.0:5000' target='x'>
-http://0.0.0.0:5000
-</a>
-
-
-<p>Also I can rely on the Gunicorn web server instead of plain Python by using this shell command:
-</p>
-
-<pre>
-gunicorn wsgi
-</pre>
-
-<p>Which allows me to see the app at the URL listed below:
-</p>
-
-<a href='http://0.0.0.0:8000' target='x'>
-http://0.0.0.0:8000
-</a>
-
-    <h2>Enhancements</h2>
-
-<p>This repo offers enhancements over
-</p>
-<a href='https://github.com/danbikle/flask10' target='x'>
-https://github.com/danbikle/flask10
-</a>
-
-
-<p>You should see the enhancements in this file:
-</p>
-<a href='https://github.com/danbikle/flask12/blob/master/flask12.py' target='x'>
-https://github.com/danbikle/flask12/blob/master/flask12.py
-</a>
-
-
-<p>First, I added a route for the path I call '/'.
-</p>
-<p>This allows me to visit this URL:
-</p>
-<a href='https://flask12.herokuapp.com' target='x'>
-https://flask12.herokuapp.com
-</a>
-
-
-<p>The route will then serve this file:
-</p>
-<a href='https://github.com/danbikle/flask12/blob/master/static/home.html' target='x'>
-https://github.com/danbikle/flask12/blob/master/static/home.html
-</a>
-
-
-<p>Also I enhanced the site so it will serve a favicon.
-</p>
-<p>I did this by placing a favicon.ico file in the static folder.
-</p>
-<p>Next, I added a route so that if a browser asks for /favicon.ico, the server will find the the file in the static folder and then serve it.
-</p>
-
-
 <p>If you have questions, e-me: bikle101@gmail.com
 </p>
 
     <hr />
-    <a href='/'   >home</a>
+    <a href='/static/home.html'   >home</a>
     <a href='/static/about.html'  >about</a>
     <a href='/static/blog.html'   >blog</a>
     <a href='/static/contact.html'>contact</a>
     <a href='/static/readme.html' >readme</a>
+    <a href='/template10/'        >template10</a>
     <hr />
     <p>© py4.us 1999-3000</p>
   </body>

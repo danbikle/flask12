@@ -24,7 +24,7 @@ bash
 conda install gunicorn
 ```
 
-To run this app on my laptop, I ran this shell command:
+To run this app on my laptop, I ran these shell commands:
 
 ```bash
 cd ~/myflask12
